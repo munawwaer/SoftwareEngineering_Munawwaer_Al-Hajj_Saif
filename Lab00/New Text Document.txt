@@ -1,0 +1,323 @@
+Microsoft Windows [Version 10.0.22631.5472]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\USER>cd desktop/SoftwareEngineering
+
+C:\Users\USER\Desktop\SoftwareEngineering>mkdir Lab00
+
+C:\Users\USER\Desktop\SoftwareEngineering>cd Lab00
+
+C:\Users\USER\Desktop\SoftwareEngineering\Lab00>mkdir my-website
+
+C:\Users\USER\Desktop\SoftwareEngineering\Lab00>cd my-website
+
+C:\Users\USER\Desktop\SoftwareEngineering\Lab00\my-website>git init
+Initialized empty Git repository in C:/Users/USER/Desktop/SoftwareEngineering/Lab00/my-website/.git/
+
+C:\Users\USER\Desktop\SoftwareEngineering\Lab00\my-website>git config user.name "munawwaer Al-waili"
+
+C:\Users\USER\Desktop\SoftwareEngineering\Lab00\my-website>git config user.email "munawwaer474359@gmail.com"
+
+C:\Users\USER\Desktop\SoftwareEngineering\Lab00\my-website>echo "<h1>Welcome to My Website</h1>" > index.html
+
+C:\Users\USER\Desktop\SoftwareEngineering\Lab00\my-website>git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        index.html
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+C:\Users\USER\Desktop\SoftwareEngineering\Lab00\my-website>git add index.html
+
+C:\Users\USER\Desktop\SoftwareEngineering\Lab00\my-website>git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   index.html
+
+
+C:\Users\USER\Desktop\SoftwareEngineering\Lab00\my-website>git commit -m "Add initial homepage"
+[master (root-commit) 5da2c0c] Add initial homepage
+ 1 file changed, 1 insertion(+)
+ create mode 100644 index.html
+
+C:\Users\USER\Desktop\SoftwareEngineering\Lab00\my-website>echo "<p>This is my first project with Git.</p>" >> index.html
+
+C:\Users\USER\Desktop\SoftwareEngineering\Lab00\my-website>git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   index.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+C:\Users\USER\Desktop\SoftwareEngineering\Lab00\my-website>git diff
+diff --git a/index.html b/index.html
+index 56ebdb2..26c9d53 100644
+--- a/index.html
++++ b/index.html
+@@ -1 +1,2 @@
+ "<h1>Welcome to My Website</h1>"
++"<p>This is my first project with Git.</p>"
+
+C:\Users\USER\Desktop\SoftwareEngineering\Lab00\my-website>git commit -am "Add welcome paragraph to homepage"
+[master 650898d] Add welcome paragraph to homepage
+ 1 file changed, 1 insertion(+)
+
+C:\Users\USER\Desktop\SoftwareEngineering\Lab00\my-website>echo "body { background-color: #f0f0f0; }" > styles.css
+
+C:\Users\USER\Desktop\SoftwareEngineering\Lab00\my-website>git add styles.css
+
+C:\Users\USER\Desktop\SoftwareEngineering\Lab00\my-website>git commit -m "Add basic styles for the page"
+[master d9ad1dc] Add basic styles for the page
+ 1 file changed, 1 insertion(+)
+ create mode 100644 styles.css
+
+C:\Users\USER\Desktop\SoftwareEngineering\Lab00\my-website>git mv styles.css main.css
+
+C:\Users\USER\Desktop\SoftwareEngineering\Lab00\my-website>git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        renamed:    styles.css -> main.css
+
+
+C:\Users\USER\Desktop\SoftwareEngineering\Lab00\my-website>git commit -m "Rename stylesheet to main.css"
+[master 62eb64b] Rename stylesheet to main.css
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ rename styles.css => main.css (100%)
+
+C:\Users\USER\Desktop\SoftwareEngineering\Lab00\my-website>git log
+commit 62eb64b9673a897eb50ba8953922917c4c164eee (HEAD -> master)
+Author: munawwaer Al-waili <munawwaer474359@gmail.com>
+Date:   Mon Jul 21 16:24:40 2025 +0300
+
+    Rename stylesheet to main.css
+
+commit d9ad1dce3e396992f42c22415b9dd93c3919e95f
+Author: munawwaer Al-waili <munawwaer474359@gmail.com>
+Date:   Mon Jul 21 16:24:04 2025 +0300
+
+    Add basic styles for the page
+
+commit 650898d0360326c50671263a73e81cbcbc954485
+Author: munawwaer Al-waili <munawwaer474359@gmail.com>
+Date:   Mon Jul 21 16:22:31 2025 +0300
+
+    Add welcome paragraph to homepage
+
+commit 5da2c0c9386f365d8317238c89c967cd6abc5ced
+Author: munawwaer Al-waili <munawwaer474359@gmail.com>
+Date:   Mon Jul 21 16:21:16 2025 +0300
+
+    Add initial homepage
+
+C:\Users\USER\Desktop\SoftwareEngineering\Lab00\my-website>git log --oneline --graph
+* 62eb64b (HEAD -> master) Rename stylesheet to main.css
+* d9ad1dc Add basic styles for the page
+* 650898d Add welcome paragraph to homepage
+* 5da2c0c Add initial homepage
+
+C:\Users\USER\Desktop\SoftwareEngineering\Lab00\my-website>git branch feature-about-page
+
+C:\Users\USER\Desktop\SoftwareEngineering\Lab00\my-website>git branch
+  feature-about-page
+* master
+
+C:\Users\USER\Desktop\SoftwareEngineering\Lab00\my-website>git switch feature-about-page
+Switched to branch 'feature-about-page'
+
+C:\Users\USER\Desktop\SoftwareEngineering\Lab00\my-website>echo "<h1>About Us</h1>" > about.html
+
+C:\Users\USER\Desktop\SoftwareEngineering\Lab00\my-website>git add about.html
+
+C:\Users\USER\Desktop\SoftwareEngineering\Lab00\my-website>git commit -m "Add about us page"
+[feature-about-page e213cc0] Add about us page
+ 1 file changed, 1 insertion(+)
+ create mode 100644 about.html
+
+C:\Users\USER\Desktop\SoftwareEngineering\Lab00\my-website>git switch main
+fatal: invalid reference: main
+
+C:\Users\USER\Desktop\SoftwareEngineering\Lab00\my-website>git switch master
+Switched to branch 'master'
+
+C:\Users\USER\Desktop\SoftwareEngineering\Lab00\my-website>git merge feature-about-page
+Updating 62eb64b..e213cc0
+Fast-forward
+ about.html | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 about.html
+
+C:\Users\USER\Desktop\SoftwareEngineering\Lab00\my-website>git branch -d feature-about-page
+Deleted branch feature-about-page (was e213cc0).
+
+
+C:\Users\USER\Desktop\SoftwareEngineering\Lab00\my-website>git remote add origin https://github.com/munawwaer/SoftwareEngineering_Munawwaer_Al-Hajj_Saif.git
+
+C:\Users\USER\Desktop\SoftwareEngineering\Lab00\my-website>git branch -M main
+C:\Users\USER\Desktop\SoftwareEngineering\Lab00\my-website>git remote -v
+origin  https://github.com/munawwaer/SoftwareEngineering_Munawwaer_Al-Hajj_Saif.git (fetch)
+origin  https://github.com/munawwaer/SoftwareEngineering_Munawwaer_Al-Hajj_Saif.git (push)
+
+C:\Users\USER\Desktop\SoftwareEngineering\Lab00\my-website>git push -u origin main
+Enumerating objects: 14, done.
+Counting objects: 100% (14/14), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (9/9), done.
+Writing objects: 100% (14/14), 1.40 KiB | 238.00 KiB/s, done.
+Total 14 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/munawwaer/SoftwareEngineering_Munawwaer_Al-Hajj_Saif.git
+ * [new branch]      main -> main
+branch 'main' set up to track 'origin/main'.
+
+C:\Users\USER\Desktop\SoftwareEngineering\Lab00\my-website>mkdir Lecture_01
+
+C:\Users\USER\Desktop\SoftwareEngineering\Lab00\my-website>git mv index.html Lecture_01/
+
+C:\Users\USER\Desktop\SoftwareEngineering\Lab00\my-website>git mv about.html Lecture_01/
+
+C:\Users\USER\Desktop\SoftwareEngineering\Lab00\my-website>git mv main.css Lecture_01/
+
+C:\Users\USER\Desktop\SoftwareEngineering\Lab00\my-website>git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        renamed:    about.html -> Lecture_01/about.html
+        renamed:    index.html -> Lecture_01/index.html
+        renamed:    main.css -> Lecture_01/main.css
+
+
+C:\Users\USER\Desktop\SoftwareEngineering\Lab00\my-website># لا حاجة لـ git add لأن git mv يقوم بالتجهيز تلقائيًا
+'#' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Users\USER\Desktop\SoftwareEngineering\Lab00\my-website>git commit -m "Organize project files into Lecture_01 folder"
+[main 38b1a97] Organize project files into Lecture_01 folder
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+ rename about.html => Lecture_01/about.html (100%)
+ rename index.html => Lecture_01/index.html (100%)
+ rename main.css => Lecture_01/main.css (100%)
+
+C:\Users\USER\Desktop\SoftwareEngineering\Lab00\my-website>git push origin main
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (1/1), done.
+Writing objects: 100% (2/2), 265 bytes | 132.00 KiB/s, done.
+Total 2 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/munawwaer/SoftwareEngineering_Munawwaer_Al-Hajj_Saif.git
+   e213cc0..38b1a97  main -> main
+
+C:\Users\USER\Desktop\SoftwareEngineering\Lab00\my-website>git show HEAD
+commit 38b1a975bd8d8d92cd06077313fb015140655861 (HEAD -> main, origin/main)
+Author: munawwaer Al-waili <munawwaer474359@gmail.com>
+Date:   Mon Jul 21 17:54:08 2025 +0300
+
+    Organize project files into Lecture_01 folder
+
+diff --git a/about.html b/Lecture_01/about.html
+similarity index 100%
+rename from about.html
+rename to Lecture_01/about.html
+diff --git a/index.html b/Lecture_01/index.html
+similarity index 100%
+rename from index.html
+rename to Lecture_01/index.html
+diff --git a/main.css b/Lecture_01/main.css
+similarity index 100%
+rename from main.css
+rename to Lecture_01/main.css
+
+C:\Users\USER\Desktop\SoftwareEngineering\Lab00\my-website>git show HEAD~1
+commit e213cc011fe3188144cfc0ea6bb65842cd461c62
+Author: munawwaer Al-waili <munawwaer474359@gmail.com>
+Date:   Mon Jul 21 16:27:14 2025 +0300
+
+    Add about us page
+
+diff --git a/about.html b/about.html
+new file mode 100644
+index 0000000..66d47b3
+--- /dev/null
++++ b/about.html
+@@ -0,0 +1 @@
++"<h1>About Us</h1>"
+
+C:\Users\USER\Desktop\SoftwareEngineering\Lab00\my-website>echo "<h1>!!!---THIS IS A MISTAKE---!!!</h1>" >>Lecture_01/index.html
+
+C:\Users\USER\Desktop\SoftwareEngineering\Lab00\my-website>git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   Lecture_01/index.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+C:\Users\USER\Desktop\SoftwareEngineering\Lab00\my-website>git restore Lecture_01/index.html
+
+C:\Users\USER\Desktop\SoftwareEngineering\Lab00\my-website>git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+
+C:\Users\USER\Desktop\SoftwareEngineering\Lab00\my-website>echo "This file should not be here" > temp.txt
+
+C:\Users\USER\Desktop\SoftwareEngineering\Lab00\my-website>git add temp.txt
+
+C:\Users\USER\Desktop\SoftwareEngineering\Lab00\my-website>git commit -m "Add temp file by mistake"
+[main ccf2294] Add temp file by mistake
+ 1 file changed, 1 insertion(+)
+ create mode 100644 temp.txt
+
+C:\Users\USER\Desktop\SoftwareEngineering\Lab00\my-website>git push origin main
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 328 bytes | 164.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/munawwaer/SoftwareEngineering_Munawwaer_Al-Hajj_Saif.git
+   38b1a97..ccf2294  main -> main
+
+C:\Users\USER\Desktop\SoftwareEngineering\Lab00\my-website>git revert HEAD --no-edit
+[main 24801c4] Revert "Add temp file by mistake"
+ Date: Mon Jul 21 18:00:20 2025 +0300
+ 1 file changed, 1 deletion(-)
+ delete mode 100644 temp.txt
+
+C:\Users\USER\Desktop\SoftwareEngineering\Lab00\my-website>git log --oneline
+24801c4 (HEAD -> main) Revert "Add temp file by mistake"
+ccf2294 (origin/main) Add temp file by mistake
+38b1a97 Organize project files into Lecture_01 folder
+e213cc0 Add about us page
+62eb64b Rename stylesheet to main.css
+d9ad1dc Add basic styles for the page
+650898d Add welcome paragraph to homepage
+5da2c0c Add initial homepage
+
+C:\Users\USER\Desktop\SoftwareEngineering\Lab00\my-website>git push origin main
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (1/1), done.
+Writing objects: 100% (2/2), 276 bytes | 138.00 KiB/s, done.
+Total 2 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/munawwaer/SoftwareEngineering_Munawwaer_Al-Hajj_Saif.git
+   ccf2294..24801c4  main -> main
+
+C:\Users\USER\Desktop\SoftwareEngineering\Lab00\my-website>

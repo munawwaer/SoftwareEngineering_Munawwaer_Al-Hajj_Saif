@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>دفع الكورس</title>
+    <style>
+      body {
+        background: #f5f8fa;
+        font-family: "Cairo", sans-serif;
+        direction: rtl;
+        text-align: center;
+      }
+      .payment-container {
+        background: #fff;
+        margin: 50px auto;
+        padding: 30px;
+        width: 400px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        border-radius: 10px;
+      }
+      h2 {
+        color: #2c3e50;
+      }
+      input,
+      select {
+        width: 90%;
+        padding: 10px;
+        margin-top: 10px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+      }
+      button {
+        background-color: #27ae60;
+        color: white;
+        padding: 12px 20px;
+        margin-top: 15px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: #219150;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="payment-container">
+      <h2>تسجيل ودفع للكورس</h2>
+      <form method="post">
+        {% csrf_token %}
+        <input
+          type="text"
+          name="fullname"
+          placeholder="الاسم الكامل"
+          required
+        />
+        <input
+          type="email"
+          name="email"
+          placeholder="البريد الإلكتروني"
+          required
+        />
+        <select name="course">
+          <option>اختر الكورس</option>
+          <option value="python">Python</option>
+          <option value="django">Django</option>
+          <option value="flutter">Flutter</option>
+        </select>
+        <input
+          type="number"
+          name="amount"
+          placeholder="المبلغ (بالدولار)"
+          required
+        />
+        <button type="submit">إتمام الدفع</button>
+      </form>
+    </div>
+  </body>
+</html>

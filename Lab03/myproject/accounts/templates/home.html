@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>مرحبا بك</title>
+    <style>
+      body {
+        font-family: "Segoe UI", sans-serif;
+        background: linear-gradient(to right, #74ebd5, #acb6e5);
+        color: #333;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      .container {
+        background-color: white;
+        padding: 40px;
+        border-radius: 20px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        text-align: center;
+        max-width: 500px;
+      }
+
+      h1 {
+        color: #4a00e0;
+        margin-bottom: 10px;
+      }
+
+      p {
+        font-size: 18px;
+      }
+
+      .btn {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 10px 20px;
+        background-color: #4a00e0;
+        color: white;
+        text-decoration: none;
+        border-radius: 8px;
+        transition: background-color 0.3s;
+      }
+
+      .btn:hover {
+        background-color: #8e2de2;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>مرحبًا بك في موقعنا!</h1>
+      <p>تم تسجيل دخولك بنجاح. يسعدنا وجودك معنا.</p>
+      <a href="{% url 'login' %}" class="btn">تسجيل الخروج</a>
+    </div>
+  </body>
+</html>
