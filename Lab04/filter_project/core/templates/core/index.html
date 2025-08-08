@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>شرح فلاتر جانغو</title>
+    <style>
+        body { font-family: sans-serif; margin: 2em; background-color: #f4f4f9; }
+        h1, h2 { color: #333; }
+        .filter-section { background-color: white; padding: 15px; margin-bottom: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        code { background-color: #eee; padding: 2px 5px; border-radius: 4px; }
+        strong { color: #d9534f; }
+    </style>
+</head>
+<body>
+    <h1>شرح عملي لفلاتر جانغو (DTL Filters)</h1>
+
+    <div class="filter-section">
+        <h2>فلاتر النصوص</h2>
+        <p>المتغير الأصلي <code>name</code>: <strong>{{ name }}</strong></p>
+        <p><code>{{ name|upper }}</code>: <strong>{{ name|upper }}</strong> (تحويل لأحرف كبيرة)</p>
+        <p><code>{{ name|lower }}</code>: <strong>{{ name|lower }}</strong> (تحويل لأحرف صغيرة)</p>
+        <p><code>{{ name|capfirst }}</code>: <strong>{{ name|capfirst }}</strong> (جعل الحرف الأول كبيرًا)</p>
+        <p><code>{{ bio|truncatewords:5 }}</code>: <strong>{{ bio|truncatewords:5 }}</strong> (عرض أول 5 كلمات فقط)</p>
+    </div>
+
+    <div class="filter-section">
+        <h2>فلاتر الأرقام والقوائم</h2>
+        <p>المتغير الأصلي <code>items</code>: <strong>{{ items }}</strong></p>
+        <p><code>{{ items|length }}</code>: <strong>{{ items|length }}</strong> (حساب طول القائمة)</p>
+        <p><code>{{ items|slice:":2" }}</code>: <strong>{{ items|slice:":2" }}</strong> (عرض أول عنصرين)</p>
+        <p><code>{{ price|floatformat:2 }}</code>: <strong>{{ price|floatformat:2 }}</strong> (تقريب الرقم العشري لمنزلتين)</p>
+    </div>
+    
+    <div class="filter-section">
+        <h2>فلاتر منطقية وإضافات</h2>
+        <p><code>{{ empty_variable|default:"لا توجد قيمة" }}</code>: <strong>{{ empty_variable|default:"لا توجد قيمة" }}</strong> (عرض قيمة افتراضية)</p>
+        <p><code>{{ name|add:' is a developer' }}</code>: <strong>{{ name|add:' is a developer' }}</strong> (إضافة نص)</p>
+        <p><code>{{ item_count|add:10 }}</code>: <strong>{{ item_count|add:10 }}</strong> (إضافة رقم)</p>
+    </div>
+
+    <div class="filter-section">
+        <h2>فلتر التاريخ</h2>
+        <p>التاريخ الأصلي <code>birthday</code>: <strong>{{ birthday }}</strong></p>
+        <p><code>{{ birthday|date:"d M Y" }}</code>: <strong>{{ birthday|date:"d M Y" }}</strong> (تنسيق التاريخ)</p>
+    </div>
+    
+    <div class="filter-section">
+        <h2>فلاتر الأمان</h2>
+        <p>المتغير الأصلي <code>html_code</code>: <strong>{{ html_code }}</strong> (لاحظ كيف تم عرض الكود ك نص عادي للأمان)</p>
+        <p>باستخدام فلتر <code>|safe</code> لعرضه كـ HTML:</p>
+        {{ html_code|safe }}
+    </div>
+
+</body>
+</html>
